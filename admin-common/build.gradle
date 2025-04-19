@@ -1,0 +1,37 @@
+apply plugin: "java-library"
+
+dependencies {
+    api "com.github.yulichang:mybatis-plus-join:${mybatisPlusJoinVersion}"
+    api "com.baomidou:mybatis-plus-spring-boot3-starter:${mybatisPlusBootStarter}"
+    api "com.baomidou:mybatis-plus-jsqlparser:${mybatisPlusBootStarter}"
+    api ('org.springframework.boot:spring-boot-starter-data-redis') {
+        exclude group: 'io.lettuce', module: 'lettuce-core'
+    }
+    api 'redis.clients:jedis:6.0.0-beta2'  // Spring Boot 3.x 需使用 Jedis 5.x+
+    api "org.springframework.boot:spring-boot-starter-validation"
+    api ('org.springframework.boot:spring-boot-starter-web') {
+        exclude group: 'org.springframework.boot', module: 'spring-boot-starter-logging'
+    }
+    api "org.springdoc:springdoc-openapi-starter-webmvc-ui:${springDocOpenAPIVersion}"
+    api ("com.github.binarywang:weixin-java-pay:${weixinPayVersion}") {
+        exclude group: 'redis.clients', module: 'jedis'
+    }
+    api ("com.github.binarywang:wx-java-mp-spring-boot-starter:${weixinPayVersion}") {
+        exclude group: 'redis.clients', module: 'jedis'
+    }
+    api ("com.github.binarywang:weixin-java-miniapp:${weixinPayVersion}") {
+        exclude group: 'redis.clients', module: 'jedis'
+    }
+    api "com.github.pagehelper:pagehelper-spring-boot-starter:${pagehelperVersion}"
+    api "com.github.oshi:oshi-core:${oshiVersion}"
+    api "com.aliyun:aliyun-java-sdk-core:${aliyunSdkVersion}"
+    api "com.tencentcloudapi:tencentcloud-sdk-java:${tencentCloudSdkVersion}"
+    api "com.aliyun.oss:aliyun-sdk-oss:${aliyunOssVersion}"
+    api "com.qiniu:qiniu-java-sdk:${qiniuCloudOssVersion}"
+    api "com.qcloud:cos_api:${tencentCloudOssVersion}"
+    compileOnlyApi "jakarta.servlet:jakarta.servlet-api:6.0.0"
+    // Jakarta Validation API
+    api 'jakarta.validation:jakarta.validation-api:3.0.2'
+    // Hibernate Validator（Jakarta Bean Validation 实现）
+    api 'org.hibernate.validator:hibernate-validator:8.0.1.Final'
+}

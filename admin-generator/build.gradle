@@ -1,0 +1,6 @@
+apply plugin: "java-library"
+
+dependencies {
+    implementation project(":admin-common")
+    implementation "org.apache.velocity:velocity-engine-core:2.4.1"
+}

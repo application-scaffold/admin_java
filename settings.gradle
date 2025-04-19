@@ -1,0 +1,6 @@
+rootProject.name = 'admin_java'
+include 'admin-common'
+include 'admin-generator'
+include 'admin-api'
+include 'front-api'
+
